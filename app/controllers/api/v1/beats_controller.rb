@@ -3,13 +3,10 @@ module Api
     class BeatsController < ApplicationController
       def index
         @beats = Beat.all
-
-        render 'api/beats/index'
       end
 
       def show
         @beat = Beat.find(params[:id])
-        render 'api/beats/show'
       end
 
       def create
