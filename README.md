@@ -1,4 +1,5 @@
 # thunderdome
+## setup
 
 ### 1.clone repository
 ```
@@ -11,7 +12,14 @@ cd thunderdome
 bundle install
 ```
 
-### 3. start server
+### 3. setup seed
+```
+rake db:seed
+```
+
+### 4. start server
 ```
 rails s
 ```
+
+## api
