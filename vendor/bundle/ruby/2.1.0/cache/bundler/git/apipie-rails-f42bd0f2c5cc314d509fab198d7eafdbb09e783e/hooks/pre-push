@@ -1,2 +1,0 @@
-[ "$(git rev-parse --abbrev-ref HEAD)" = "master" ] && echo "You cant push the master branch to the remote" && exit 1
-exit 0
