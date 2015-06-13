@@ -22,5 +22,5 @@ $ rake db:seed
 $ rails s
 ```
 
-## api document
-localhost:3000/apipie
+## api documents
+[http://localhost:3000/apipie](http://localhost:3000/apipie)
