@@ -1,7 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+track_dir = Rails.root.join('db/seeds/tracks/')
+Beat.destroy_all
+Dir.open(track_dir).each do |f|
+  next if f =~ /^\./
+  Beat.create(title: 'foo', track: File.new(track_dir.join(f)))
+end

@@ -1,2 +1,2 @@
 collection @beats
-attributes :id, :title, :created_at
+attributes :id, :title, :track, :created_at

@@ -21,7 +21,7 @@ module Api
 
       private
       def beat_params
-        params.require(:beat).permit(:title)
+        params.require(:beat).permit(:title, :track)
       end
     end
   end
