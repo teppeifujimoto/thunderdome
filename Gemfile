@@ -27,6 +27,7 @@ gem 'rabl'
 gem 'oj'
 
 gem "paperclip", "~> 4.2"
+gem 'apipie-rails', :github => 'Apipie/apipie-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
