@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613033622) do
+ActiveRecord::Schema.define(version: 20150614150140) do
 
   create_table "beats", force: :cascade do |t|
     t.string   "title"
@@ -22,5 +22,18 @@ ActiveRecord::Schema.define(version: 20150613033622) do
     t.integer  "track_file_size"
     t.datetime "track_updated_at"
   end
+
+  create_table "raps", force: :cascade do |t|
+    t.integer  "beat_id"
+    t.string   "title"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "track_file_name"
+    t.string   "track_content_type"
+    t.integer  "track_file_size"
+    t.datetime "track_updated_at"
+  end
+
+  add_index "raps", ["beat_id"], name: "index_raps_on_beat_id"
 
 end
