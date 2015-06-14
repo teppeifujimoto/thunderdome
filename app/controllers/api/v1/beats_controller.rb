@@ -3,7 +3,7 @@ module Api
     class BeatsController < ApplicationController
       api :GET, '/v1/beats', 'Beat のリストを取得する。'
       def index
-        @beats = Beat.all
+        @beats = Beat.includes(:raps).all
       end
 
       api :GET, '/v1/beats/:id', 'Beatを取得する。'
