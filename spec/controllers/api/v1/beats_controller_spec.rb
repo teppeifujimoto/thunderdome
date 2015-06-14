@@ -40,7 +40,7 @@ RSpec.describe Api::V1::BeatsController, type: :controller do
     end
   end
 
-  describe "POST #create" do
+  describe "PUT #update" do
     let!(:beat){create(:beat)}
     let(:title){"foo"}
     let(:beat_params){ {id: beat.id,  beat: {:title => title}} }

@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   apipie
   namespace :api do
     namespace :v1 do
-      resources :beats, except: [:new, :edit]
+      resources :beats, except: [:new, :edit] do
+        resources :raps, only: [:create]
+      end
+      resources :raps, except: [:new, :create, :edit]
     end
   end
 
