@@ -9,7 +9,6 @@ module Api
       api :GET, '/v1/beats/:id', 'Beatを取得する。'
       error :code => 404, :desc => "Not Found"
       formats ['json']
-
       def show
         @beat = Beat.find(params[:id])
       end
@@ -18,9 +17,9 @@ module Api
       def create
         @beat = Beat.new(beat_params)
         if @beat.save
-          render :nothing, status: 200
+          render action: 'show', status: 200
         else
-          render :nothing, status: 500
+          render json: :nothing, status: 500
         end
       end
 
@@ -29,19 +28,19 @@ module Api
       def update
         @beat = Beat.find(params[:id])
         if @beat.update_attributes(beat_params)
-          render :nothing, status: 200
+          render action: 'show', status: 200
         else
-          render :nothing, status: 500
+          render json: :nothing, status: 500
         end
       end
 
       api :DELETE, '/v1/beats/:id', 'Beatを削除する。'
-      def delete
+      def destroy
         @beat = Beat.find(params[:id])
         if @beat.destroy
-          render :nothing, status: 200
+          render json: :nothing, status: 200
         else
-          render :nothing, status: 500
+          render json: :nothing, status: 500
         end
       end
 
