@@ -19,8 +19,8 @@ RSpec.describe Api::V1::BeatsController, type: :controller do
   end
 
   describe "POST #create" do
-    let(:title){"foo"}
-    let(:beat_params){ {beat: {:title => title}} }
+    let(:title) {'hoge'}
+    let(:beat_params){ {beat: attributes_for(:beat, title: title)} }
 
     it "returns http success" do
       post :create, beat_params
