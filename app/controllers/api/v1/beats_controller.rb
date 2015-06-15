@@ -18,7 +18,7 @@ module Api
         if @beat.save
           render action: 'show', status: 200
         else
-          render json: :nothing, status: 500
+          render json: :nothing, status: 400
         end
       end
 
@@ -28,7 +28,7 @@ module Api
         if @beat.update_attributes(beat_params)
           render action: 'show', status: 200
         else
-          render json: :nothing, status: 500
+          render json: :nothing, status: 400
         end
       end
 
@@ -38,7 +38,7 @@ module Api
         if @beat.destroy
           render json: :nothing, status: 200
         else
-          render json: :nothing, status: 500
+          render json: :nothing, status: 400
         end
       end
 
