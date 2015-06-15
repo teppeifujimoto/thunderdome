@@ -12,9 +12,9 @@ $ cd thunderdome
 $ bundle install --path vendor/bundle
 ```
 
-#### 3. setup seed
+#### 3. setup database
 ```
-$ rake db:seed
+$ rake db:setup
 ```
 
 #### 4. start server
